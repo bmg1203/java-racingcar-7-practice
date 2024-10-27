@@ -24,8 +24,7 @@ public class CarRacingManager {
     }
 
     public List<Car> checkWhoIsWinner() {
-        sortCarRepository();
-        List<Car> cars = carRepository.findAll();
+        List<Car> cars = sortCarRepository();
         Car winner = cars.get(0);
         int winnerPosition = winner.getPosition();
         saveWinners(cars, winnerPosition);
@@ -45,9 +44,10 @@ public class CarRacingManager {
     }
 
 
-    private void sortCarRepository() {
+    private List<Car> sortCarRepository() {
         List<Car> cars = getCarRepository();
         Collections.sort(cars);
+        return cars;
     }
 
     private List<Car> getCarRepository() {
