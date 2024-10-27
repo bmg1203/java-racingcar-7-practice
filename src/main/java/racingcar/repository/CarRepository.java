@@ -10,6 +10,8 @@ public class CarRepository {
     private final List<Car> carRepository = new ArrayList<>();
     private final Map<String, Boolean> carNameMap = new HashMap<>();
 
+    private final static String CAR_DUPLICATED_ERROR = "차 이름은 중복 될 수 없습니다.";
+
     public void saveCarRepository(Car car) {
         ValidateDuplicate(car);
         carRepository.add(car);
@@ -23,7 +25,7 @@ public class CarRepository {
         String realCarName = car.getCarName();
         String upperRealCarName = realCarName.toUpperCase();
         if (carNameMap.containsKey(upperRealCarName)) {
-            throw new IllegalArgumentException("차 이름은 중복 될 수 없습니다.");
+            throw new IllegalArgumentException(CAR_DUPLICATED_ERROR);
         }
         carNameMap.put(upperRealCarName, true);
     }
