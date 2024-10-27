@@ -24,7 +24,7 @@ public class Name {
     }
 
     private void validateNameFormat() {
-        if (!name.matches("^[a-zA-Z0-9]*$")) {
+        if (!name.matches("^[a-zA-Z0-9가-힣ㄱ-ㅎ]*$")) {
             throw new IllegalArgumentException("올바른 이름 형식이 아닙니다.");
         }
     }
