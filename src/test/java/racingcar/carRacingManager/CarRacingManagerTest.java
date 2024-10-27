@@ -39,7 +39,7 @@ class CarRacingManagerTest {
     }
 
     @Test
-    void 승자가_한명일_경우() {
+    void 승자가_여러명일_경우() {
         List<Car> winners = carRacingManager.checkWhoIsWinner();
         Assertions.assertEquals(car3.getCarName(), winners.get(0).getCarName());
         Assertions.assertEquals(car4.getCarName(), winners.get(1).getCarName());
