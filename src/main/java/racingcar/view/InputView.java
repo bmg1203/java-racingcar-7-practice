@@ -3,8 +3,13 @@ package racingcar.view;
 import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
+    private static final String INPUT_NAME_CONSTANT = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
+    private static final String INPUT_NUMBER_CONSTANT = "시도할 횟수는 몇 회인가요?";
+    private static final String PROCESS_CONSTANT = "실행결과";
+
+
     public String[] showCarListInput() {
-        System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
+        System.out.println(INPUT_NAME_CONSTANT);
         String inputCarNames = camp.nextstep.edu.missionutils.Console.readLine();
 
         String[] carNames = inputCarNames.split(",", -1);
@@ -21,17 +26,14 @@ public class InputView {
 
     }
 
-    private void validateLastComma(String[] inputCarNames) {
-
-    }
 
     public String showTryNumberInput() {
-        System.out.println("시도할 횟수는 몇 회인가요?");
+        System.out.println(INPUT_NUMBER_CONSTANT);
         return Console.readLine();
     }
 
     public void startProcessView() {
         System.out.println();
-        System.out.println("실행결과");
+        System.out.println(PROCESS_CONSTANT);
     }
 }

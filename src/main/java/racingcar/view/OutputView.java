@@ -5,6 +5,7 @@ import java.util.List;
 import racingcar.domian.car.Car;
 
 public class OutputView {
+    private static final String FINAL_WINNER_CONSTANT = "최종 우승자 : ";
 
     public static void showProcessView(List<Car> cars) {
 
@@ -32,6 +33,6 @@ public class OutputView {
             }
         }
 
-        System.out.println("최종 우승자 : " + winnersStringBuilder);
+        System.out.println(FINAL_WINNER_CONSTANT + winnersStringBuilder);
     }
 }
