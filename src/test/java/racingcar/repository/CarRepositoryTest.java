@@ -14,6 +14,8 @@ class CarRepositoryTest {
     Car car4;
     Car car44;
     Car car444;
+    Car ASDF;
+    Car asDf;
 
     @BeforeEach
     void beforEach() {
@@ -24,6 +26,8 @@ class CarRepositoryTest {
         car4 = Car.createCar("name4");
         car44 = Car.createCar("name4");
         car444 = Car.createCar("name4");
+        ASDF = Car.createCar("ASDF");
+        asDf = Car.createCar("asDf");
     }
 
     @Test
@@ -36,6 +40,15 @@ class CarRepositoryTest {
         for (int i = 0; i < cars.size(); i++) {
             Assertions.assertEquals("name" + (i + 1), cars.get(i).getCarName());
         }
+    }
+
+    @Test
+    void 이름은_대소문자_가달라도_같은이름이다() {
+        carRepository.saveCarRepository(ASDF);
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> carRepository.saveCarRepository(asDf));
+
+
     }
 
     @Test
