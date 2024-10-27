@@ -20,11 +20,13 @@ public class CarRepository {
     }
 
     public void ValidateDuplicate(Car car) {
-        if (carNameMap.containsKey(car.getCarName())) {
+        String realCarName = car.getCarName();
+        String upperRealCarName = realCarName.toUpperCase();
+        if (carNameMap.containsKey(upperRealCarName)) {
             throw new IllegalArgumentException("차 이름은 중복 될 수 없습니다.");
         }
-        carNameMap.put(car.getCarName(), true);
+        carNameMap.put(upperRealCarName, true);
     }
 
-   
+
 }
