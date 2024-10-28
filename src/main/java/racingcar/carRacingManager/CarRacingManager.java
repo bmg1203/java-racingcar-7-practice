@@ -4,8 +4,7 @@ import camp.nextstep.edu.missionutils.Randoms;
 import java.util.Collections;
 import java.util.List;
 import racingcar.carAction.CarAction;
-import racingcar.carAction.CarForward;
-import racingcar.carAction.CarStop;
+import racingcar.carAction.CarActionProvider;
 import racingcar.carRace.CarRace;
 import racingcar.domian.car.Car;
 import racingcar.repository.CarRepository;
@@ -16,8 +15,6 @@ public class CarRacingManager {
     private CarRepository carRepository;
     private Winners winners = Winners.createWinners();
 
-    private static final CarAction CAR_ACTION_FORWARD = new CarForward();
-    private static final CarAction CAR_ACTION_STOP = new CarStop();
 
     public CarRacingManager(CarRepository carRepository) {
         this.carRepository = carRepository;
@@ -66,10 +63,10 @@ public class CarRacingManager {
 
     private CarAction getCarAction(int pickRandomNumber) {
         if (pickRandomNumber >= 4) {
-            return CAR_ACTION_FORWARD;
+            return CarActionProvider.getForwardAction();
 
         }
-        return CAR_ACTION_STOP;
+        return CarActionProvider.getStopAction();
     }
 
 }
