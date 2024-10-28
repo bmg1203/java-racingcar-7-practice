@@ -1,7 +1,9 @@
 package racingcar;
 
-public class Application {
+import racingcar.service.ApplicationRunner;
+
+public class Application extends ApplicationRunner {
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+        run();
     }
 }
