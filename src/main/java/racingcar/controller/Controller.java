@@ -2,7 +2,6 @@ package racingcar.controller;
 
 import java.util.List;
 import racingcar.dto.CarDto;
-import racingcar.repository.CarRepository;
 import racingcar.service.Service;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
@@ -10,7 +9,6 @@ import racingcar.view.OutputView;
 
 public class Controller {
     private Service service;
-    private CarRepository carRepository;
     private InputView inputView;
     private OutputView outputView;
 
