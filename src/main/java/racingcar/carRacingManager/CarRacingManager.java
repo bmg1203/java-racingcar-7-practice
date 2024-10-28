@@ -6,7 +6,7 @@ import java.util.List;
 import racingcar.carAction.CarAction;
 import racingcar.carAction.CarActionProvider;
 import racingcar.carRace.CarRace;
-import racingcar.domian.car.Car;
+import racingcar.domain.car.Car;
 import racingcar.repository.CarRepository;
 import racingcar.repository.Winners;
 

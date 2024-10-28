@@ -4,7 +4,7 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import racingcar.domian.car.Car;
+import racingcar.domain.car.Car;
 
 class CarRepositoryTest {
     CarRepository carRepository;

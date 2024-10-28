@@ -1,6 +1,6 @@
 package racingcar.carAction;
 
-import racingcar.domian.car.Car;
+import racingcar.domain.car.Car;
 
 public class CarForward implements CarAction {
 

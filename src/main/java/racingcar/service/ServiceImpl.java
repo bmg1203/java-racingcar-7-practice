@@ -2,8 +2,8 @@ package racingcar.service;
 
 import java.util.List;
 import racingcar.carRacingManager.CarRacingManager;
-import racingcar.domian.TryNumber;
-import racingcar.domian.car.Car;
+import racingcar.domain.TryNumber;
+import racingcar.domain.car.Car;
 import racingcar.repository.CarRepository;
 import racingcar.view.OutputView;
 

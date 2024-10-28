@@ -1,4 +1,4 @@
-package racingcar.domian;
+package racingcar.domain;
 
 public class TryNumber {
 

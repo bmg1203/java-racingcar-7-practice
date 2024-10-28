@@ -1,7 +1,7 @@
 package racingcar.service;
 
 import java.util.List;
-import racingcar.domian.car.Car;
+import racingcar.domain.car.Car;
 
 public interface Service {
 

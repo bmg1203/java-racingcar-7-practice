@@ -2,7 +2,7 @@ package racingcar.view;
 
 import java.util.Iterator;
 import java.util.List;
-import racingcar.domian.car.Car;
+import racingcar.domain.car.Car;
 
 public class OutputView {
     private static final String FINAL_WINNER_CONSTANT = "최종 우승자 : ";

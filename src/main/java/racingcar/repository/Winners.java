@@ -2,7 +2,7 @@ package racingcar.repository;
 
 import java.util.ArrayList;
 import java.util.List;
-import racingcar.domian.car.Car;
+import racingcar.domain.car.Car;
 
 public class Winners {
 

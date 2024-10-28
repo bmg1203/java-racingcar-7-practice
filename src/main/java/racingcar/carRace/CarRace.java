@@ -1,7 +1,7 @@
 package racingcar.carRace;
 
 import racingcar.carAction.CarAction;
-import racingcar.domian.car.Car;
+import racingcar.domain.car.Car;
 
 public class CarRace {
     private Car car;

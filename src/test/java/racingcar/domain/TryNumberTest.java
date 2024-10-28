@@ -1,4 +1,4 @@
-package racingcar.domian;
+package racingcar.domain;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

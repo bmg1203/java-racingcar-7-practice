@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import racingcar.domian.car.Car;
+import racingcar.domain.car.Car;
 
 public class CarRepository {
     private final List<Car> carRepository = new ArrayList<>();
