@@ -2,13 +2,13 @@ package racingcar.repository;
 
 import java.util.ArrayList;
 import java.util.List;
-import racingcar.domain.car.Car;
+import racingcar.dto.CarDto;
 
 public class Winners {
 
-    private final List<Car> winners = new ArrayList<>();
+    private final List<CarDto> winners = new ArrayList<>();
 
-    public List<Car> findWinners() {
+    public List<CarDto> findWinners() {
         return new ArrayList<>(winners);
     }
 
@@ -19,8 +19,8 @@ public class Winners {
         return new Winners();
     }
 
-    public void addWinners(Car car) {
-        winners.add(car);
+    public void addWinners(CarDto carDto) {
+        winners.add(carDto);
     }
 
 

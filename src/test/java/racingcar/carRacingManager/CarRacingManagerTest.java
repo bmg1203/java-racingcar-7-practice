@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import racingcar.domain.car.Car;
+import racingcar.dto.CarDto;
 import racingcar.repository.CarRepository;
 
 class CarRacingManagerTest {
@@ -40,9 +41,9 @@ class CarRacingManagerTest {
 
     @Test
     void 승자가_여러명일_경우() {
-        List<Car> winners = carRacingManager.checkWhoIsWinner();
-        Assertions.assertEquals(car3.getCarName(), winners.get(0).getCarName());
-        Assertions.assertEquals(car4.getCarName(), winners.get(1).getCarName());
+        List<CarDto> winners = carRacingManager.checkWhoIsWinner();
+        Assertions.assertEquals(car3.getCarName(), winners.get(0).getName());
+        Assertions.assertEquals(car4.getCarName(), winners.get(1).getName());
 
     }
 

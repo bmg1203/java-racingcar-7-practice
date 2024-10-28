@@ -7,6 +7,7 @@ import racingcar.carAction.CarAction;
 import racingcar.carAction.CarActionProvider;
 import racingcar.carRace.CarRace;
 import racingcar.domain.car.Car;
+import racingcar.dto.CarDto;
 import racingcar.repository.CarRepository;
 import racingcar.repository.Winners;
 
@@ -20,13 +21,15 @@ public class CarRacingManager {
         this.carRepository = carRepository;
     }
 
-    public List<Car> checkWhoIsWinner() {
+
+    public List<CarDto> checkWhoIsWinner() {
         List<Car> cars = sortCarRepository();
         Car winner = cars.get(0);
         int winnerPosition = winner.getPosition();
         saveWinners(cars, winnerPosition);
         return winners.findWinners();
     }
+
 
     private void saveWinners(List<Car> cars, int winnerPosition) {
         for (Car car : cars) {
@@ -36,8 +39,10 @@ public class CarRacingManager {
         }
     }
 
+
     private void saveWinner(Car car) {
-        winners.addWinners(car);
+        CarDto carDto = car.toDTO();
+        winners.addWinners(carDto);
     }
 
 
@@ -46,6 +51,7 @@ public class CarRacingManager {
         Collections.sort(cars);
         return cars;
     }
+
 
     private List<Car> getCarRepository() {
         return carRepository.findAll();
@@ -61,6 +67,7 @@ public class CarRacingManager {
         }
     }
 
+
     private CarAction getCarAction(int pickRandomNumber) {
         if (pickRandomNumber >= 4) {
             return CarActionProvider.getForwardAction();
@@ -68,5 +75,6 @@ public class CarRacingManager {
         }
         return CarActionProvider.getStopAction();
     }
+
 
 }

@@ -1,7 +1,7 @@
 package racingcar.controller;
 
 import java.util.List;
-import racingcar.domain.car.Car;
+import racingcar.dto.CarDto;
 import racingcar.repository.CarRepository;
 import racingcar.service.Service;
 import racingcar.view.InputView;
@@ -14,12 +14,13 @@ public class Controller {
     private InputView inputView;
     private OutputView outputView;
 
-    public Controller(Service service, CarRepository carRepository, InputView inputView, OutputView outputView) {
+
+    public Controller(Service service, InputView inputView, OutputView outputView) {
         this.service = service;
-        this.carRepository = carRepository;
         this.inputView = inputView;
         this.outputView = outputView;
     }
+
 
     public void play() {
         String[] carListInput = inputView.showCarListInput();
@@ -28,7 +29,7 @@ public class Controller {
 
         service.saveCars(carListInput);
         service.play(tryNumber);
-        List<Car> winners = service.whoIsWinner();
+        List<CarDto> winners = service.whoIsWinner();
         outputView.showResult(winners);
 
     }

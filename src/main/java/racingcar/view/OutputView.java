@@ -3,6 +3,7 @@ package racingcar.view;
 import java.util.Iterator;
 import java.util.List;
 import racingcar.domain.car.Car;
+import racingcar.dto.CarDto;
 
 public class OutputView {
     private static final String FINAL_WINNER_CONSTANT = "최종 우승자 : ";
@@ -20,13 +21,13 @@ public class OutputView {
     }
 
 
-    public void showResult(List<Car> winners) {
+    public void showResult(List<CarDto> winners) {
 
         StringBuilder winnersStringBuilder = new StringBuilder();
-        Iterator<Car> carIterator = winners.iterator();
+        Iterator<CarDto> carIterator = winners.iterator();
         while (carIterator.hasNext()) {
-            Car winner = carIterator.next();
-            winnersStringBuilder.append(winner.getCarName());
+            CarDto winner = carIterator.next();
+            winnersStringBuilder.append(winner.getName());
             if (carIterator.hasNext()) {
                 winnersStringBuilder.append(",");
                 winnersStringBuilder.append(" ");

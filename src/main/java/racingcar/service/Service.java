@@ -1,7 +1,7 @@
 package racingcar.service;
 
 import java.util.List;
-import racingcar.domain.car.Car;
+import racingcar.dto.CarDto;
 
 public interface Service {
 
@@ -10,5 +10,5 @@ public interface Service {
 
     void play(String inputTryNumber);
 
-    List<Car> whoIsWinner();
+    List<CarDto> whoIsWinner();
 }

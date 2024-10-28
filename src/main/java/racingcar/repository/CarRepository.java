@@ -13,7 +13,7 @@ public class CarRepository {
     private final static String CAR_DUPLICATED_ERROR = "차 이름은 중복 될 수 없습니다.";
 
     public void saveCarRepository(Car car) {
-        ValidateDuplicate(car);
+        validateDuplicate(car);
         carRepository.add(car);
     }
 
@@ -21,7 +21,7 @@ public class CarRepository {
         return new ArrayList<>(carRepository);
     }
 
-    public void ValidateDuplicate(Car car) {
+    private void validateDuplicate(Car car) {
         String realCarName = car.getCarName();
         String upperRealCarName = realCarName.toUpperCase();
         if (carNameMap.containsKey(upperRealCarName)) {

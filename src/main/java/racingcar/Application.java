@@ -20,7 +20,7 @@ public class Application {
         Service service = new ServiceImpl(carRepository, carRacingManager);
         InputView inputView = new InputView();
         OutputView outputView = new OutputView();
-        Controller controller = new Controller(service, carRepository, inputView, outputView);
+        Controller controller = new Controller(service, inputView, outputView);
         controller.play();
 
     }

@@ -4,6 +4,7 @@ import java.util.List;
 import racingcar.carRacingManager.CarRacingManager;
 import racingcar.domain.TryNumber;
 import racingcar.domain.car.Car;
+import racingcar.dto.CarDto;
 import racingcar.repository.CarRepository;
 import racingcar.view.OutputView;
 
@@ -37,7 +38,7 @@ public class ServiceImpl implements Service {
     }
 
 
-    public List<Car> whoIsWinner() {
+    public List<CarDto> whoIsWinner() {
         return carRacingManager.checkWhoIsWinner();
     }
 
