@@ -1,11 +1,14 @@
 package racingcar.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class RacingGameTest {
 
@@ -23,6 +26,14 @@ class RacingGameTest {
 
         cars = new Cars(makeCars);
         racingGame = new RacingGame(cars, 1);
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {-1, -3, 0})
+    void 시도회수_예외_테스트(int tryCount) {
+        //when, then
+        assertThatThrownBy(() -> new RacingGame(cars, tryCount))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
