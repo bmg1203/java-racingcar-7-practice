@@ -11,9 +11,10 @@ public class InputView {
     public List<String> inputCarNames() {
         System.out.println(InputPrompts.CAR_NAME_INPUT.getInputPrompt());
         String input = Console.readLine();
-        List<String> names = Split.commaSplit(input);
-
+        input = input.replaceAll(" ", "");
         InputValidator.validateNull(input);
+
+        List<String> names = Split.commaSplit(input);
         InputValidator.validateEmptyList(names);
         InputValidator.validateDuplicateName(names);
         return names;
@@ -22,6 +23,7 @@ public class InputView {
     public int inputTryCount() {
         System.out.println(InputPrompts.TRY_COUNT_INPUT.getInputPrompt());
         String input = Console.readLine();
+        input = input.replaceAll(" ", "");
 
         InputValidator.validateNull(input);
         return InputValidator.validateTryCount(input);
