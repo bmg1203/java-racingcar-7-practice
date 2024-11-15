@@ -6,11 +6,13 @@ public class RacingGame {
 
     private static final int MIN_RANDOM_NUMBER = 0;
     private static final int MAX_RANDOM_NUMBER = 9;
+    private static final int MIN_TRY_COUNT = 1;
     private final Cars cars;
     private final int tryCount;
 
     public RacingGame(Cars cars, int tryCount) {
         this.cars = cars;
+        validateMinTryCount(tryCount);
         this.tryCount = tryCount;
     }
 
@@ -20,6 +22,12 @@ public class RacingGame {
 
     public int getTryCount() {
         return tryCount;
+    }
+
+    private void validateMinTryCount(int tryCount) {
+        if (tryCount < MIN_TRY_COUNT) {
+            throw new IllegalArgumentException();
+        }
     }
 
     public void execute(String name, int randomNumber) {
