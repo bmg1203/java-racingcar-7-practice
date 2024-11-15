@@ -23,4 +23,16 @@ public class InputValidator {
             throw new IllegalArgumentException();
         }
     }
+
+    public static void validateNull(String input) {
+        if (input.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    public static void validateEmptyList(List<String> names) {
+        if (names.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+    }
 }

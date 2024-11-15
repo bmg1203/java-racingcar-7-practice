@@ -13,6 +13,8 @@ public class InputView {
         String input = Console.readLine();
         List<String> names = Split.commaSplit(input);
 
+        InputValidator.validateNull(input);
+        InputValidator.validateEmptyList(names);
         InputValidator.validateDuplicateName(names);
         return names;
     }
@@ -21,6 +23,7 @@ public class InputView {
         System.out.println(InputPrompts.TRY_COUNT_INPUT.getInputPrompt());
         String input = Console.readLine();
 
+        InputValidator.validateNull(input);
         return InputValidator.validateTryCount(input);
     }
 }
