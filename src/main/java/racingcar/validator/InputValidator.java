@@ -25,7 +25,7 @@ public class InputValidator {
     }
 
     public static void validateNull(String input) {
-        if (input.isEmpty()) {
+        if (input == null || input.trim().isEmpty()) {
             throw new IllegalArgumentException();
         }
     }
