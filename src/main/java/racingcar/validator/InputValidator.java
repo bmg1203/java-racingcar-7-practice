@@ -15,4 +15,12 @@ public class InputValidator {
             validateNames.add(name);
         }
     }
+
+    public static int validateTryCount(String input) {
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException();
+        }
+    }
 }
