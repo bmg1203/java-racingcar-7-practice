@@ -14,6 +14,7 @@ public class OutputView {
             System.out.printf(OutputPrompts.TRY_RESULT.getOutputPrompt(),
                     car.getName(), DISTANCE_STRING.repeat(car.getDistance()));
         }
+        System.out.println();
     }
 
     public void winnersPrint(List<String> winners) {
