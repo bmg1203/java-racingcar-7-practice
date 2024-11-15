@@ -16,4 +16,11 @@ public class InputView {
         InputValidator.validateDuplicateName(names);
         return names;
     }
+
+    public int inputTryCount() {
+        System.out.println(InputPrompts.TRY_COUNT_INPUT.getInputPrompt());
+        String input = Console.readLine();
+
+        return InputValidator.validateTryCount(input);
+    }
 }
