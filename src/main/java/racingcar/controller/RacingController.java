@@ -1,7 +1,7 @@
 package racingcar.controller;
 
 import camp.nextstep.edu.missionutils.Console;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import racingcar.constants.OutputPrompts;
@@ -36,7 +36,7 @@ public class RacingController {
     }
 
     private void carsSetting(List<String> names) {
-        Map<String, Car> setCars = new HashMap<>();
+        Map<String, Car> setCars = new LinkedHashMap<>();
 
         for (String name : names) {
             setCars.put(name, new Car(name));
